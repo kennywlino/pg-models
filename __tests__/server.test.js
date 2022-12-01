@@ -20,7 +20,7 @@ describe('REST API', () => {
     expect(response.status).toEqual(404);
   });
 
-  test('Creates a customer'), async () => {
+  test('Creates a customer', async () => {
     let response = await request.post('/customer').send({
       name: 'test',
       age: 42,
@@ -28,18 +28,18 @@ describe('REST API', () => {
     });
 
     expect(response.status).toEqual(200);
-    expect(response.body.name).toEqual('tester');
+    expect(response.body.name).toEqual('test');
     expect(response.body.age).toEqual(42);
     expect(response.body.pronouns).toEqual('they/them');
-  };
+  });
 
-  test('Find all customers'), async () => {
+  test('Find all customers', async () => {
     let response = await request.get('/customer');
 
     expect(response.status).toEqual(200);
-    expect(response.body[0].name).toEqual('tester');
+    expect(response.body[0].name).toEqual('test');
     expect(response.body[0].age).toEqual(42);
     expect(response.body[0].pronouns).toEqual('they/them');
-  };
+  });
 
 });

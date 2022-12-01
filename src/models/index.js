@@ -9,7 +9,7 @@ const customersSchema = require('./customers.schema');
 // using a ternary to set up sqlite for testing
 
 const DATABASE_URL = process.env.NODE_ENV === 'test'
-  ? 'sqlite::memory'
+  ? 'sqlite:memory'
   : process.env.DATABASE_URL;
 
 
